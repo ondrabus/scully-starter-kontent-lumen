@@ -1,0 +1,11 @@
+<div class="layout"
+    [attr.data-kontent-project-id]="projectId"
+    data-kontent-language-codename="default"
+    >
+    <sidebar [isHomePage]="true" class="sidebar"></sidebar>
+    <div class="content">
+        <div class="content__inner">
+            <article *ngFor="let article of articles" [article]="article"></article>
+        </div>
+    </div>
+</div>

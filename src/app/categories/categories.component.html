@@ -1,0 +1,15 @@
+<div class="layout"
+    *ngIf="category"
+    >
+    <sidebar [isHomePage]="false" class="sidebar"></sidebar>
+    <div class="content">
+        <div class="content__inner">
+            <div class="page">
+                <h1 class="page__title">{{category.title.value}}</h1>
+                <div class="page__body">
+                    <article *ngFor="let article of articles" [article]="article"></article>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div *ngIf="author">
+    <div class="sidebar__inner">
+      <div class="sidebar__author" [attr.data-kontent-item-id]="author.system.id">
+        <div>
+          <a routerLink="/">
+            <img
+              [attr.src]="author.avatarImage.value[0].url"
+              class="sidebar__author-photo"
+              width="75"
+              height="75"
+              [attr.alt]="author.name.value"
+              data-kontent-element-codename="avatar_image"
+            />
+          </a>
+            <h1 *ngIf="isHomePage" class="sidebar__author-title" data-kontent-element-codename="name">
+                <a routerLink="/" class="sidebar__author-title-link">
+                {{author.name.value}}
+                </a>
+            </h1>
+            <h2 *ngIf="!isHomePage" class="sidebar__author-title" data-kontent-element-codename="name">
+                <a class="sidebar__author-title-link" routerLink="/">
+                {{author.name.value}}
+                </a>
+            </h2>
+          <p class="sidebar__author-subtitle" data-kontent-element-codename="bio">
+            {{author.bio.value}}
+          </p>
+        </div>
+      </div>
+      <div>
+        <menu></menu>
+        <links [author]="author"></links>
+        <p *ngIf="metadata" class="sidebar__copyright">{{metadata.copyright.value}}</p>
+      </div>
+    </div>
+  </div>

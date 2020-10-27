@@ -1,0 +1,28 @@
+<div class="article" [attr.data-kontent-item-id]="article.system.id">
+    <div class="article__meta">
+      <time
+        class="article__meta-time"
+        [attr.dateTime]="moment(article.date.value).format('MMMM D, YYYY')"
+        data-kontent-element-codename="date"
+      >
+        {{moment(article.date.value).format('MMMM YYYY')}}
+      </time>
+      <span class="article__meta-divider"></span>
+      <span class="article__meta-category" [attr.key]="article.category.value[0].slug.value" data-kontent-element-codename="category">
+        <a
+            [routerLink]="'/categories/' + article.category.value[0].slug.value"
+            class="article__meta-category-link"> 
+            {{article.category.value[0].title.value}}
+        </a>
+      </span>
+    </div>
+    <h2 class="article__title" data-kontent-element-codename="title">
+      <a class="article__title-link" [routerLink]="'/articles/' + article.slug.value">
+        {{article.title.value}}
+      </a>
+    </h2>
+    <p class="article__description"  data-kontent-element-codename="description">{{article.description.value}}</p>
+    <a class="article__readmore" [routerLink]="'/articles/' + article.slug.value">
+      Read
+    </a>
+  </div>

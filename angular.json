@@ -24,11 +24,12 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
+              "src/assets/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/scss/init.scss",
+              "src/assets/fonts/fontello-771c82e0/css/fontello.css"
             ],
             "scripts": []
           },
@@ -92,7 +93,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/scss/init.scss"
             ],
             "scripts": []
           }

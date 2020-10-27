@@ -1,0 +1,43 @@
+<div class="links">
+    <ul class="links__list">
+      <li *ngIf="author.twitter.value" class="links__list-item" data-kontent-element-codename="twitter">
+        <a
+          [attr.href]="'https://twitter.com/' + author.twitter.value"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="icon-twitter"></i>
+        </a>
+      </li>
+      <li *ngIf="author.github.value" class="links__list-item" data-kontent-element-codename="github">
+        <a
+          [attr.href]="'https://www.github.com/' + author.github.value"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="icon-github"></i>
+        </a>
+      </li>
+      <li *ngIf="author.vk.value" class="links__list-item" data-kontent-element-codename="vk">
+        <a
+          [attr.href]="'https://www.vk.com/' + author.vk.value"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="icon-vkontakte"></i>
+        </a>
+      </li>
+    </ul>
+    <ul class="links__list">
+      <li *ngIf="author.email.value" class="links__list-item" data-kontent-element-codename="email">
+        <a [attr.href]="'mailto:' + author.email.value">
+          <i class="icon-mail"></i>
+        </a>
+      </li>
+      <li *ngIf="author.telegram.value" class="links__list-item" data-kontent-element-codename="telegram">
+        <a [attr.href]="'telegram:' + author.telegram.value">
+          <i class="icon-paper-plane"></i>
+        </a>
+      </li>
+    </ul>
+  </div>

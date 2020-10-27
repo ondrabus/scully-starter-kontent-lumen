@@ -1,0 +1,51 @@
+<div class="layout"
+    [attr.data-kontent-project-id]="projectId"
+    data-kontent-language-codename="default"
+    *ngIf="article && author && metadata"
+    >
+    <div>
+        <div>
+            <a class="article-single__home-button" routerLink="/">
+              All Articles
+            </a>
+        </div>
+        <div class="article-single" [attr.data-kontent-item-id]="article.system.id">
+          <div class="article-single__inner">
+            <h1 class="article-single__title" data-kontent-element-codename="title">{{article.title.value}}</h1>
+            <a [routerLink]="'/articles/g'">test</a>
+            <div
+              data-kontent-element-codename="content"
+              class="article-single__body"
+              [innerHTML]="article.content.resolveHtml()">
+            </div>
+            <!-- <scully-content></scully-content> -->
+        </div>
+        <div class="article-single__date" data-kontent-element-codename="date">
+          <em>
+            Published {{moment(article.date.value).format('D MMM YYYY')}}
+          </em>
+        </div>
+        <div class="article-single__footer">
+            <div class="article-single__tags">
+                <ul class="article-single__tags-list" data-kontent-element-codename="tags">
+                    <li *ngFor="let tag of article.tags.value" class="article-single__tags-list-item">
+                        <a [routerLink]="'/tags/' + tag.slug.value" class="article-single__tags-list-item-link">
+                        {{tag.title.value}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+          <hr />
+          <p class="article-single__footer-text">
+            {{metadata.subtitle.value}}
+            <a
+              [attr.href]="'https://twitter.com/' + author.twitter.value"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <br /> <strong>{{author.name.value}}</strong> on Twitter
+              </a>
+          </p>
+        </div>
+    </div>
+</div>

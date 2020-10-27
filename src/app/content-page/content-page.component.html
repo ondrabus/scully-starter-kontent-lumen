@@ -1,0 +1,22 @@
+<div class="layout"
+    [attr.data-kontent-project-id]="projectId"
+    data-kontent-language-codename="default"
+    *ngIf="content"
+    >
+    <sidebar [isHomePage]="false" class="sidebar"></sidebar>
+    <div class="content">
+        <div class="content__inner">
+            <div class="page" [attr.data-kontent-item-id]="content.system.id">
+                <h1 class="page__title" data-kontent-element-codename="title">
+                    {{content.title.value}}
+                </h1>
+                <div
+                    class="page__body"
+                    data-kontent-element-codename="description"
+                    [innerHTML]="content.description.resolveHtml()">
+                </div>
+                <!-- <scully-content></scully-content> -->
+            </div>
+        </div>
+    </div>
+</div>
