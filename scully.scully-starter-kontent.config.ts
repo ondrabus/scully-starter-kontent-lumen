@@ -1,7 +1,15 @@
-import { ScullyConfig } from '@scullyio/scully';
+import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
+const {DisableAngular} = require('scully-plugin-disable-angular');
+ 
+const postRenderers = [DisableAngular];
+
+setPluginConfig(DisableAngular, 'render', {
+  removeState: true
+});
 
 export const config: ScullyConfig = {
   projectRoot: "./src",
+  defaultPostRenderers: postRenderers,  // for all routes
   projectName: "scully-starter-kontent",
   outDir: './dist/static',
   routes: {
