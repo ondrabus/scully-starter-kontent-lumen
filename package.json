@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "scully": "scully",
-    "scully:serve": "scully serve"
+    "scully:serve": "scully serve",
+    "netlify-build": "npm run build -- --prod --stats-json && npm run scully"
   },
   "private": true,
   "dependencies": {
